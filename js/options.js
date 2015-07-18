@@ -1,6 +1,6 @@
 $(function(){
   var urlList = localStorage.urlList ;
-  if(!urlList){ urlList = []; }
+  if(!urlList){ urlList = ''; }
   $('#urlList').val(urlList.split(',').join("\n"));
   $('#save').click(function() {
     urlList = $('#urlList').val() ;

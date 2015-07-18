@@ -14,7 +14,6 @@ function appendScript(jsSrc){
   script = document.createElement("script");
   script.innerHTML = jsSrc ;
   document.body.appendChild(script);
-  var urlList = [] ;
   chrome.runtime.sendMessage({method:"getUrlList"},function(response) {
     urlList = response.urlList;
     script = document.createElement("script");

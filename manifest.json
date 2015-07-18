@@ -1,9 +1,9 @@
 {
   "name": "ドットインストール連続再生",
   "short_name": "ガッツインストール",
-  "version": "0.2.1",
+  "version": "0.2.4",
   "manifest_version": 2,
-  "description": "ドットインストールの動画を連続再生します",
+  "description": "初心者向けプログラミング学習サイト『ドットインストール』の動画を連続で再生します",
   "icons": {
       "16":  "icons/icon16.png",
       "48":  "icons/icon48.png",

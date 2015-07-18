@@ -21,7 +21,7 @@
               currentListIndex = index ;
             }
           });
-          if(currentListIndex){
+          if(currentListIndex!==undefined){
             nextListIndex = currentListIndex + 1 ;
             if( nextListIndex == urlList.length ){
               nextListIndex = 0 ;
