@@ -29,8 +29,8 @@ chrome.tabs.onUpdated.addListener(
       var skipFlg   = (match[3]) ? true : false ;
       var searchFlg = (match[2]=='search') ? true : false ;
       if(popupFlg){
-        redirectUrl = match.slice(1,6).join('') ;
-        chrome.tabs.sendRequest(tabId, {redirectUrl: redirectUrl}, function(response) {});
+        redirectUrl = match.slice(1,5).join('') ;
+        chrome.tabs.sendRequest(tabId, {skipPopup: redirectUrl}, function(response) {});
       }
       else if(movieFlg){
         chrome.tabs.sendRequest(tabId, {jsSrc: jsSrc}, function(response) {});
