@@ -1,6 +1,7 @@
 {
   "name": "ドットインストール連続再生",
-  "version": "0.0.1",
+  "short_name": "ガッツインストール",
+  "version": "0.2.1",
   "manifest_version": 2,
   "description": "ドットインストールの動画を連続再生します",
   "icons": {
@@ -9,16 +10,17 @@
       "128": "icons/icon128.png"
   },
   "permissions": [
-    "tabs"
+    "http://dotinstall.com/lessons/*", "tabs"
   ],
   "content_scripts": [
     {
       "matches": ["http://dotinstall.com/lessons/*"],
-      "js": ["js/jquery-2.1.4.min.js","js/content.js"]
+      "js": ["js/jquery/jquery-2.1.4.min.js","js/content.js"]
     }
   ],
   "background": {
     "scripts": ["js/background.js"]
-  }
+  },
+  "options_page": "options.html"
 
 }

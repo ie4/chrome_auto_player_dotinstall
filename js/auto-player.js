@@ -1,5 +1,6 @@
 (function(vjs){ vjs('videojs_player',{}).ready(function(){
   var headPos = $(".page-header").offset().top - 10 ;
+  var listIndex = 0 ;
   $('body').animate({ scrollTop: headPos });
   this.play();
   this.on('ended', function() {
@@ -8,7 +9,27 @@
     };
     var next = function(){
       if(isDone()){
-        location.href = $('.videoCommands a')[3].href;
+        var nextUrl = $('.videoCommands a')[3].href;
+        if(!nextUrl && urlList.length > 0){
+          var nextListIndex = 0 ;
+          var currentUrl = window.location.href ;
+          var match = currentUrl.match(/\/([^\/]+)\/\d+$/);
+          var currentLesson = match[1];
+          urlList.forEach( function(element, index, array){
+            var match = element.match(/\/([^\/]+)\/\d+$/);
+            if(match && match[1] == currentLesson){
+              currentListIndex = index ;
+            }
+          });
+          if(currentListIndex){
+            nextListIndex = currentListIndex + 1 ;
+            if( nextListIndex == urlList.length ){
+              nextListIndex = 0 ;
+            }
+          }
+          nextUrl = urlList[nextListIndex];
+        }
+        location.href = nextUrl ;
       }else{
         window.setTimeout(next, 500);
       }

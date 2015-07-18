@@ -17,3 +17,10 @@ chrome.tabs.onUpdated.addListener(
     chrome.tabs.sendRequest(tabId, {jsSrc: jsSrc}, function(response) {});
   }
 );
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.method == "getUrlList"){
+      sendResponse({urlList: localStorage.urlList});
+    }else{
+      sendResponse({});
+    }
+});
