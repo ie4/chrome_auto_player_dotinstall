@@ -1,8 +1,8 @@
-# ドットインストール連続再生 Google Chrome Extension
+![ガッツインストール](images/logo.png)
 
-![ガッツインストール](images/gatzinstall_big.gif)
+## ドットインストール連続再生 Chrome拡張機能
 
-## これは何？
+### これは何？
 
 初心者向けプログラミング学習サイト『ドットインストール http://dotinstall.com/ 』の動画を、自動で連続再生させる拡張機能です。
 
@@ -14,7 +14,6 @@
 
 ※今後、ページのDOM構成が変わったら動かなくなる可能性があります
 
-
-## Chrome ウェブストア
+### Chrome ウェブストア
 
 https://chrome.google.com/webstore/detail/iamjmfdpekhdfkdahjmeahghgcdpehco
