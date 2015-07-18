@@ -1,13 +1,15 @@
-var url = window.location.href ;
-if (url.indexOf('/popup')>0){
-  var windowWidth  = window.innerWidth ;
-  var windowHeight = window.innerHeight + 130 ;
-  resizeTo(windowWidth,windowHeight);
-  window.location.href = url.replace('/popup','') ;
-}
 chrome.extension.onRequest.addListener(
   function(request, sender, sendResponse) {
-    appendScript(request.jsSrc);
+    if(request.action == "skipListPage"){
+      var movieLinks = $("#lessons_list li a") ;
+      if(movieLinks.length>0){
+        window.location.href = movieLinks[0].href ;
+      }
+    }else if(request.redirectUrl){
+        window.location.href = request.redirectUrl ;
+    }else if(request.jsSrc){
+      appendScript(request.jsSrc);
+    }
   }
 );
 function appendScript(jsSrc){

@@ -11,6 +11,7 @@
       if(isDone()){
         var nextUrl = $('.videoCommands a')[3].href;
         if(!nextUrl && urlList.length > 0){
+          var currentListIndex = null ;
           var nextListIndex = 0 ;
           var currentUrl = window.location.href ;
           var match = currentUrl.match(/\/([^\/]+)\/\d+$/);
@@ -21,13 +22,13 @@
               currentListIndex = index ;
             }
           });
-          if(currentListIndex!==undefined){
+          if(currentListIndex !== null){
             nextListIndex = currentListIndex + 1 ;
             if( nextListIndex == urlList.length ){
               nextListIndex = 0 ;
             }
           }
-          nextUrl = urlList[nextListIndex];
+          nextUrl = urlList[nextListIndex]+'?';
         }
         location.href = nextUrl ;
       }else{
