@@ -17,7 +17,7 @@
           var match = currentUrl.match(/\/([^\/]+)\/\d+$/);
           var currentLesson = match[1];
           urlList.forEach( function(element, index, array){
-            var match = element.match(/\/([^\/]+)\/\d+$/);
+            var match = element.match(/\/([^\/]+)(\/)?(\d+)?$/);
             if(match && match[1] == currentLesson){
               currentListIndex = index ;
             }
